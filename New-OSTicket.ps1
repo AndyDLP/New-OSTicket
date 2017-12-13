@@ -19,9 +19,11 @@
         [Parameter(HelpMessage = "The contact phone number of the user")]
         [string]$PhoneNumber = "",
 
+        # Custom field
         [Parameter(HelpMessage = "The department to create the ticket in, must match exactly")]
         [string]$Department = "",
 
+        # Custom field
         [Parameter(HelpMessage = "The computer that the ticket was generated from, can be spoofed")]
         [string]$ComputerName = "$env:COMPUTERNAME",
 
@@ -34,6 +36,7 @@
         [Parameter(HelpMessage = "Topic ID number from ticket")]
         [string]$topicID = "1",
 
+        # Custom field
         [Parameter(HelpMessage = "Room")]
         [string]$room = "",
 
@@ -70,5 +73,3 @@
     # works!
     Invoke-WebRequest -Uri $URI -Headers @{'X-API-Key'=$APIKey} -Body $Params -UseDefaultCredentials -Method Post -ContentType "application/json"
 }
-
-New-OSTicket -Title "Test Title" -Message "Test Message"
