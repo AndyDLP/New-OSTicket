@@ -69,7 +69,5 @@
         #attachments = @{"Filename.txt" = ()}
     } | ConvertTo-Json
 
-
-    # works!
     Invoke-WebRequest -Uri $URI -Headers @{'X-API-Key'=$APIKey} -Body $Params -UseDefaultCredentials -Method Post -ContentType "application/json"
 }

@@ -1,0 +1,30 @@
+Task details:
+title
+description
+
+Company Information:
+name
+website
+phone
+address
+
+Organization Information:
+name
+address
+phone
+website
+notes
+
+Ticket Details:
+email
+name
+phone
+subject
+message
+priority
+
+Contact Information:
+email
+name
+phone
+notes
