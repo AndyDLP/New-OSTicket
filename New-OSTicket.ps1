@@ -44,7 +44,7 @@
         [Parameter(HelpMessage = "The API key to send to the OSTicket install")]
         [string]$APIKey = "",
 
-        [Parameter(HelpMessage = 'The application URI to send the POST request to e.g. [url]/api/tickets.json)'])
+        [Parameter(HelpMessage = 'The application URI to send the POST request to e.g. [url]/api/tickets.json')]
         [string]$URI = ""
     )
 
