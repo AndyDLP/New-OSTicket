@@ -151,12 +151,12 @@
 
 		# Add the correct JSON endpoint
 		$URI = "$Server/api/tickets.json"
-		$HTTPResponse = Invoke-WebRequest -Uri $URI -Headers @{ "X-API-Key" = $APIKey } -Body $Params -UseDefaultCredentials -Method Post -ContentType "application/json"
+		$HTTPResponse = Invoke-WebRequest -Uri $URI -Headers @{ "X-API-Key" = $APIKey } -Body $Params -UseDefaultCredentials -Method Post -ContentType "application/json" -ErrorAction Stop
 
 		# If it fails for whatever reason, let us know
 		if ($HTTPResponse.StatusCode -ne 201) {
-			Write-Error "Unexpected HTTP status code: $($HTTPResponse.StatusCode)"
-			Write-Error $HTTPResponse.RawContent
+			Write-Warning "Unexpected HTTP status code: $($HTTPResponse.StatusCode)"
+			Write-Warning "$($HTTPResponse.RawContent)"
 		}
 	}
 
