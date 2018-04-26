@@ -147,7 +147,7 @@
 			source = $TicketSource;
 			priority = $Priority;
 			attachments = $AttachableFiles
-		}
+		} | ConvertTo-Json
 
 		# Add the correct JSON endpoint
 		$URI = "$Server/api/tickets.json"
