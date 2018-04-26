@@ -120,7 +120,7 @@
 
 		foreach ($FilePath in $Attachments) {
 			$FileToAttach = Get-Item -Path $FilePath
-			if ($FileToAttach.Length -gt 2MB) {
+			if ($FileToAttach.Length -lt 2MB) {
 				Write-Verbose "Attaching file: $($FileToAttach.Name)"
 				$MimeType = [System.Web.MimeMapping]::GetMimeMapping($FilePath.FullName)
 				$Base64FileData = [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes($FilePath))
