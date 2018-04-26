@@ -150,7 +150,7 @@
 		} | ConvertTo-Json
 
 		# Add the correct JSON endpoint
-		$URI = "$Server/api/tickets.json"
+		$URI = "http://$Server/api/tickets.json"
 		$HTTPResponse = Invoke-WebRequest -Uri $URI -Headers @{ "X-API-Key" = $APIKey } -Body $Params -UseDefaultCredentials -Method Post -ContentType "application/json" -ErrorAction Stop
 
 		# If it fails for whatever reason, let us know
